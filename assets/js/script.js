@@ -30,6 +30,15 @@ function tabOpen(x) {
 // ============== DARK THEME================
 let themeBtn = document.querySelector("#theme-btn");
 
+
+// Set dark theme là mặc định khi trang được tải
+if (document.body.classList.contains("active")) {
+  themeBtn.classList.add("ri-sun-line");
+} else {
+  document.body.classList.add("active")
+  themeBtn.classList.add("ri-sun-line");
+}
+
 themeBtn.onclick = function () {
   themeBtn.classList.toggle("ri-sun-line");
   if (themeBtn.classList.contains("ri-sun-line")) {
@@ -38,6 +47,7 @@ themeBtn.onclick = function () {
     document.body.classList.remove("active");
   }
 };
+
 
 // ============== TYPED JS ================
 const typed = new Typed(".multiple-text", {
